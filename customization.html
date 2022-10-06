@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+
+<head>
+  <link rel="stylesheet" href="style.css">
+
+  <title>Code of Conduct: The Game</title>
+  <style>
+    @font-face {
+      font-family: TheFatRat;
+      src: url('fonts/Last Paradise.ttf') format('truetype');
+    }
+  </style>
+</head>
+
+<body class="customization">
+  <audio id="myAudio" src="" preload="auto">
+  </audio>
+  <h1>Customization</h1>
+   <div class="loader-container">
+      	<div id="loader" class="loader"></div>
+      </div>
+  <fieldset style="display: none;">
+    <legend><b>MUSIC</b></legend>
+    <label for="music-sel">Choose a song:</label>
+
+    <select id="music-sel">
+      <option value="none">none</option>
+      <option value="afterlife">Afterlife</option>
+      <option value="arcadia">Arcadia</option>
+      <option value="jackpot">Jackpot</option>
+      <option value="kingdom-come">Kingdom Come</option>
+      <option value="mad-moon-falling">Mad Moon Falling</option>
+      <option value="monody">Monody</option>
+      <option value="nemisis">Nemesis</option>
+      <option value="sunlight">Sunlight</option>
+      <option value="time-lapse">Time Lapse</option>
+      <option value="windfall">Windfall</option>
+
+    </select><br><br> <button onclick="togglePlay()" disabled style="padding: 6px; color: white; border: 1px solid white; display: inline-flex;
+    align-items: center;
+    align-content: center;" class="play-song"><img style="padding: 0; margin: 3px" src="img/play.png">
+      song</button><br><br><br>
+    <i style="font-size: 15px; display: flex; align-items: center;justify-content: center;">Music provided by <a style=" font-family: 'TheFatRat' !important;font-size: 20px;color: white;  margin: 0;" id="lol" onclick="dothechange()" href="#"> The Fat Rat</a></i>
+    <br>
+  </fieldset>
+  </div>
+  <button onclick="window.location.href='main.html'" class="play">SAVE</button>
+   <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+   <script>
+function dothechange() {
+  document.getElementById('lol').innerHTML = '<strike style="font-family: \'TheFatRat\' !important; padding: 0">Da</strike>  The Fat Rat'
+  setTimeout(undothechnage, 800)
+}
+
+
+function undothechnage() {
+  document.getElementById('lol').innerText = 'The Fat Rat'
+}
+
+
+
+
+
+     
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyDwrA0S_FEtAFZf_l262w5sP_LwXL-Ot9A",
+      authDomain: "school-game-a48e9.firebaseapp.com",
+      projectId: "school-game-a48e9",
+      storageBucket: "school-game-a48e9.appspot.com",
+      messagingSenderId: "387144751665",
+      appId: "1:387144751665:web:bfc4a56b5d15e139b81310",
+      measurementId: "G-68EC7BYK8W",
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    let provider = new firebase.auth.GoogleAuthProvider();
+
+    let name = "",
+      email = "";
+    function checkAuthState() {
+      firebase.auth().onAuthStateChanged((user) => {
+        if (user) {
+           name = user.displayName;
+           email = user.email;
+          dodathings()
+        } else {
+          //   window.location.href="../index.html"
+        }
+      });
+    }
+
+    checkAuthState();
+    // Initialize Cloud Firestore and get a reference to the service
+ 
+  </script>
+  <script src="customization.js"></script>
+</body>

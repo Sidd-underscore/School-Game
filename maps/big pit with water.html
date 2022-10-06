@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<head>
+  <link rel="stylesheet" href="../style.css" />
+  <title>Code of Conduct: The Game</title>
+
+</head>
+
+<body class="canvas">
+  <canvas id="canvas"></canvas>
+  <div class="bg">
+    <div class="counter">
+      Nice! You just won...<br /><br /><br />
+      <div class="points-scored">---</div>
+      <br /><br /><br />
+      points!
+      <div class="colors-won"></div>
+    </div>
+    <button onclick="window.location.href = '../main.html'">Proceed...</button>
+  </div>
+  <div class="points">0</div>
+  <script src="../maps.js"></script>
+  <script>
+    map_data = maps.lake;
+  </script>
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+  <script>
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyDwrA0S_FEtAFZf_l262w5sP_LwXL-Ot9A",
+      authDomain: "school-game-a48e9.firebaseapp.com",
+      projectId: "school-game-a48e9",
+      storageBucket: "school-game-a48e9.appspot.com",
+      messagingSenderId: "387144751665",
+      appId: "1:387144751665:web:bfc4a56b5d15e139b81310",
+      measurementId: "G-68EC7BYK8W",
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    let provider = new firebase.auth.GoogleAuthProvider();
+
+    let name = "",
+      email = "";
+    function checkAuthState() {
+      firebase.auth().onAuthStateChanged((user) => {
+        if (user) {
+
+          name = user.displayName;
+          email = user.email;
+          if (name) {
+           
+          } else {
+            console.log('no name')
+          }
+        } else {
+          window.location.href = "../index.html"
+        }
+      });
+    }
+
+    checkAuthState();
+    // Initialize Cloud Firestore and get a reference to the service
+
+  </script>
+  <script src="../main.js"></script>
+
+</body>

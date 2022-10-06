@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<head>
+  <link rel="stylesheet" href="style.css" />
+  <title>Code of Conduct: The Game</title>
+
+</head>
+
+<body class="map">
+ 
+  <br /><br />
+  <div class="heading">
+    <h1>
+      <span style="color: white;"> Welcome to</span> <strong> Island</strong>
+    </h1>
+    <p>
+      <i style="font-size: smaller;">Pronounced <strong onclick="">Ize lind</strong></i>
+    </p>
+    <br />
+    <p style="font-size: 16px;">
+      <strong>Island</strong> has many different environments to explore. Click on
+      one of the pulsing environment symbols on the map below to explore one.
+    </p>
+  </div>
+  <div class="map-div-thing">
+    <img class="map" src="map.png" />
+    <div class="map-wrapper">
+      <div class="marker mountains"
+        onclick="fillData(`Mountains`, `Grass shoots, various herbs, ferns and wild berries`, `Big cliffs and holes in the rock`, `Hard`)">
+      </div>
+      <div class="marker hole"
+        onclick="fillData(`Da Hole`, `It is a hole, so only lichen and other hole-plants live down there. What did you expect?`, `Lava pockets`, `Medium`)">
+      </div>
+      <div class="marker lake"
+        onclick="fillData(`Big Pit with Water`, `Underwater sea things like algae`, `Fake sand`, `Easy`)"></div>
+      <div class="marker lava"
+        onclick="fillData(`Pit with Very Very Very Hot Stuff`, `Everything that touhes the hot stuff dies, so no plants survive near here`, `The Very Very Very Hot Stuff`, `Hard`)">
+      </div>
+      <div class="marker forest"
+        onclick="fillData(`Tall Plants with Brown Stem and Green Decoration`, `The Tall Plants with Brown Stem and Green Decoration`, `Nothing really...`, `Easy`)">
+      </div>
+    </div>
+  </div>
+
+  <div class="instructions">
+    <div class="env-info">
+      <br />
+      Name: <strong id="name">---</strong> <br /><br />
+      Common Plants: <strong id="plants">---</strong> <br /><br />
+      Hazards: <strong id="hazards">---</strong> <br /><br />
+      Difficulty: <strong class="" id="difficulty">---</strong> <br /><br /><br />
+      <button disabled id="play">EXPLORE</button>
+    </div>
+  </div>
+  <script src="map.js"></script>
+  <script>
+    
+
+  </script>
+</body>

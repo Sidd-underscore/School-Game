@@ -1,0 +1,586 @@
+body *,
+body {
+	color: white;
+	font-family: 'Courier New', Courier, monospace;
+	background-color: #242325;
+	padding: 10px;
+}
+
+signin {
+	text-align: center;
+	align-content: center;
+}
+
+a {
+	color: #5c7aff;
+}
+
+a:hover {
+	text-decoration: none;
+	animation: 500ms;
+}
+
+h1,
+strong,
+b,
+th {
+    color: #5c7aff;
+    padding: 0;
+    background-color: transparent;
+}
+
+i {
+	padding: 0;
+}
+
+
+#welcome {
+	text-align: center;
+}
+
+table {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+td,
+th {
+	text-align: left;
+	padding: 8px;
+}
+
+
+body.canvas {
+	padding: 0 !important;
+	margin: 0 !important;
+	height: 100vh;
+	width: 100vw;
+	overflow: hidden;
+	background-color: #242325;
+}
+
+
+
+body.canvas .points {
+	position: absolute;
+	top: 10px !important;
+	right: 10px !important;
+	color: white;
+	transition: 500ms;
+	border: 1px solid #777;
+	padding: 10px;
+	border-radius: 5px;
+}
+
+body.canvas .points:hover {
+	font-size: 35px;
+	top: 20px !important;
+	right: 20px !important;
+}
+
+
+
+button {
+	cursor: pointer;
+	border-radius: 5px;
+	color: #5c7aff;
+	border: 2.5px solid #5c7aff;
+	background-color: rgb(00, 00, 00, 10%);
+	background-color: #242325;
+	border-bottom: 5px solid #5c7aee;
+	padding: 10px;
+	padding-left: 15px;
+	padding-right: 15px;
+	border-radius: 5px;
+}
+
+button:hover {
+	transition: 500ms;
+	font-size: bigger;
+}
+
+table col[type="points"] {
+	align-items: center;
+}
+
+th {
+	border: none;
+}
+
+
+td {
+	border: none;
+	border-bottom: 1px solid white;
+}
+
+button.play {
+	position: fixed;
+	bottom: 20px;
+	right: 35%;
+	left: 35%;
+	font-size: 24px;
+  height: 50px;
+}
+
+button.play:hover {
+	font-size: 35px;
+  height: fit-content;
+}
+
+.customization {
+	padding-top: 30px;
+}
+
+.customization .ball {
+	background-color: rgb(255, 255, 255);
+	width: 250px;
+	height: 250px;
+	border-radius: 50%;
+	margin: auto;
+	padding: 10px;
+}
+
+.customization .color {
+	width: 15px;
+	height: 15px;
+	display: inline-flex;
+	cursor: pointer;
+	justify-content: center;
+	align-items: center;
+	transition: 500ms;
+	margin: 18px;
+	border-radius: 15px;
+}
+
+.customization .color:hover {
+	width: 25px;
+	height: 25px;
+}
+
+.customization .colors {
+	margin-bottom: 100px;
+}
+
+.customization {
+	text-align: center;
+	align-content: center;
+}
+
+.customization-button {
+	position: fixed;
+	bottom: 20px;
+	right: calc(35% + 700px);
+	left: 35%;
+  height: 50px;
+  width: 50px;
+	font-size: 24px;
+}
+
+.customization img.music-provider {
+  border-radius: 10px;
+  height: 20px;
+}
+
+.canvas .bg,
+.canvas .rpg {
+	width: 100%;
+	height: 100%;
+	z-index: 1000000000000000000000000;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	display: none;
+	left: 0;
+	right: 0;
+	align-content: center;
+	justify-content: center;
+
+}
+
+
+
+.canvas .bg button {
+	position: absolute;
+	z-index: 100000000000;
+	bottom: 20px;
+	margin-left: 0;
+}
+
+.canvas .rpg button {
+	position: fixed;
+	bottom: 20px;
+	right: 40%;
+	left: 40%;
+	font-size: 24px;
+}
+
+.canvas .bg .points-scored {
+	font-size: 100px;
+	text-align: center;
+	display: inline-flex;
+	align-content: center;
+	justify-content: center;
+
+}
+
+.canvas .bg .counter {
+	height: 50%;
+	text-align: center;
+	margin-top: 10%;
+}
+
+.canvas .bg .colors-won .color {
+	width: 15px;
+	height: 15px;
+	display: inline-block;
+	cursor: pointer;
+	transition: 500ms;
+	margin: 10px;
+	border-radius: 15px;
+}
+
+.canvas .bg .colors-won .color {
+	width: 25px;
+	height: 25px;
+}
+
+body.map img.map {
+    /* min-height: 90vh; */
+    /* max-height: 90vh; */
+    height: 601px;
+    width: 650px;
+    position: absolute;
+    /* top: 0; */
+    background-color: transparent;
+    left: 0;
+}
+
+body.map div.map-wrapper {
+	width: 100%;
+	min-height: 90vh;
+	max-height: 90vh;
+	position: absolute;
+	/* top: 40px;  */
+	left: 0;
+	background-color: transparent;
+	min-width: 90vw;
+	max-width: 90vw;
+}
+
+body.map div.map-wrapper div.marker {
+	animation: pulse 5s infinite;
+	position: absolute;
+	cursor: pointer;
+	border-radius: 50%;
+}
+
+body.map div.map-wrapper div.marker.mountains {
+	position: absolute;
+	width: 100px;
+	height: 100px;
+	top: 90px;
+	border-radius: 50%;
+	left: 150px;
+}
+
+
+body.map div.map-wrapper div.marker.forest {
+	position: absolute;
+	width: 100px;
+	height: 100px;
+	top: 100px;
+	border-radius: 50%;
+	left: 340px;
+}
+
+body.map div.map-wrapper div.marker.hole {
+	position: absolute;
+	width: 100px;
+	height: 100px;
+	top: 200px;
+	border-radius: 50%;
+	left: 440px;
+}
+
+body.map div.map-wrapper div.marker.lake {
+	position: absolute;
+	width: 100px;
+	height: 100px;
+	top: 220px;
+	border-radius: 50%;
+	left: 305px;
+}
+
+body.map div.map-wrapper div.marker.lava {
+	position: absolute;
+	width: 125px;
+	height: 135px;
+	top: 350px;
+	border-radius: 50%;
+	left: 335px;
+}
+
+body.map div.heading {
+	margin: 10px;
+}
+
+
+@keyframes pulse {
+	0% {
+		background-color: rgb(255, 255, 255, 5%);
+	}
+
+	20% {
+		background-color: rgb(255, 255, 255, 15%);
+	}
+
+	40% {
+		background-color: rgb(255, 255, 255, 5%);
+	}
+
+	60% {
+		background-color: rgb(255, 255, 255, 15%);
+	}
+
+	80% {
+
+		background-color: rgb(255, 255, 255, 5%);
+	}
+
+	100% {
+		background-color: rgb(255, 255, 255, 15%);
+
+	}
+}
+
+
+#loading {
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    position: fixed;
+    display: block;
+    opacity: 0.7;
+    background-color: #fff;
+    z-index: 99;
+    text-align: center;
+}
+
+#loading-image {
+    position: absolute;
+    top: 100px;
+    left: 240px;
+    z-index: 100;
+}
+
+[disabled] {
+	opacity: 50%;
+	cursor: not-allowed;
+}
+
+body.map div.instructions {
+	position: absolute;
+	top: 350px;
+	font-size: 10px;
+	left: 700px;
+	margin: 10px;
+	background: transparent;
+}
+
+@media only screen and (max-width: 600px) {
+	body.map div.instructions {
+		position: absolute;
+		top: 708px;
+		left: 10px !important;
+		font-size: 10px;
+		width: 500px;
+		margin: 10px;
+		width: 250px;
+		background: transparent;
+	}
+}
+
+body.map div.map-div-thing {
+	margin-top: 100px;
+}
+
+body.map div.instructions div.env-info button#play {
+	font-size: smaller;
+}
+
+body.map div.env-info {
+	font-size: 14px;
+	background: transparent;
+
+}
+
+.canvas .rpg .youbutnot * {
+	display: inline-block;
+}
+
+.canvas .rpg .youbutnot {
+	top: 20px;
+	left: 20px;
+}
+
+.canvas .rpg .youbutnot .you-talk,
+.canvas .rpg .notyou .edna-talk {
+	padding-top: 5%;
+	padding-left: 50px;
+}
+
+.canvas .rpg .notyou img {
+	width: auto;
+	display: inline-flex;
+	text-align: top;
+	height: 200px;
+}
+
+
+.canvas .rpg .youbutnot div.you {
+	width: 200px;
+	height: 200px;
+	border-radius: 50%;
+}
+
+.canvas .rpg .youbutnot,
+.canvas .rpg .notyou {
+	display: inline-flex;
+	align-content: center;
+}
+
+.canvas .rpg,
+.canvas .rpg * {
+	padding: 10px;
+}
+
+
+	.loader {
+    display: flex;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    border: 4px solid rgba(255,255,255,0);
+    border-top-color: 4px solid #7fc4d1;
+    border-right-color: 4px solid #7fc4d1;
+    -webkit-animation: single2 4s infinite linear;
+    animation: single2 1.6s infinite linear;
+	}
+
+	@-webkit-keyframes single2 {
+	   0% {
+	      -webkit-transform: rotate(0deg);
+	      transform: rotate(0deg);
+	      border-top-color: #5c7aff;
+	      border-right-color: #5c7aff;
+	   }
+	   50% {
+	      border-top-color: #5c7aff;
+	      border-right-color: #5c7aff;
+	   }
+	   100% {
+	      -webkit-transform: rotate(720deg);
+	      transform: rotate(720deg);
+	      border-top-color: #5c7aff;
+	      border-right-color: #5c7aff;
+	   }
+	}
+
+	@keyframes single2 {
+	   0% {
+	      -webkit-transform: rotate(0deg);
+	      transform: rotate(0deg);
+	      border-top-color: #5c7aff;
+	      border-right-color: #5c7aff;
+	   }
+	   50% {
+	      border-top-color: #5c7aff;
+	      border-right-color: #5c7aff;
+	   }
+	   100% {
+	      -webkit-transform: rotate(720deg);
+	      transform: rotate(720deg);
+	      border-top-color: #5c7aff;
+	      border-right-color: #5c7aff;
+	   }
+	}
+
+.loader-container {
+  display: flex;
+      align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+#difficulty {
+  text-transform: uppercase;
+}
+
+#difficulty.Medium {
+  color: orange;
+}
+
+#difficulty.Hard {
+  color: red;
+}
+
+#difficulty.Easy {
+  color: green;
+}
+
+@keyframes shake {
+ 0% { transform: translate(0, 0) rotate(0deg); }
+  25% { transform: translate(5px, 5px) rotate(5deg); }
+  50% { transform: translate(0, 0) rotate(0deg); }
+  75% { transform: translate(-5px, 5px) rotate(-5deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+.tutorial {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.tutorial .content {
+    background-color: #242325;
+    margin: 54px auto;
+    padding: 20px;
+    border: 1px solid white;
+    border-radius: 5px;
+    width: 80%;
+    align-items: center;
+    align-content: center;
+    /* height: 50%; */
+    justify-content: center;
+}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    padding: 12px;
+    font-size: 28px;
+    margin-right: 26px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+    width: 25px;
+    height: 32px;
+}
+
+.close:hover,
+.close:focus {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
