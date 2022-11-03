@@ -1,6 +1,5 @@
 var db = firebase.firestore();
 
-var prefferedColor = localStorage.getItem('p-color')
 
 var map = {
 	tile_size: 10,
@@ -133,7 +132,7 @@ var map = {
 	player: {
 		x: 1,
 		y: 1,
-		color: prefferedColor || "white"
+		color: "white"
 	},
 
 	/* scripts refered to by the "script" variable in the tile keys */
@@ -428,12 +427,13 @@ function askQ(callback, loop) {
 				"advisor",
 				"teacher",
 				"counselor",
-				"adult employee"
+				"adult employee",
+				"it"
 			],
 			"all_ansers_req": false
 		},
 		{
-			"question": "What 10nine learner traits are we guided by?",
+			"question": "What 10 learner traits are we guided by?",
 			"answer": [
 				"caring",
 				"principled",
@@ -556,15 +556,15 @@ function askQ(callback, loop) {
 		{
 			"question": "Name as many acts that are considered violent that you know. Know that these are *absolutely* not allowed",
 			"answer": [
-				"pushing",
-				"shoving",
-				"tripping",
-				"slapping",
-				"kicking",
-				"spitting",
-				"hitting",
-				"biting",
-				"grabbing"
+				"push",
+				"shov",
+				"trip",
+				"slap",
+				"kick",
+				"spit",
+				"hit",
+				"bit",
+				"grab"
 			],
 			"all_ansers_req": false
 		},
@@ -605,8 +605,12 @@ function askQ(callback, loop) {
 	]
 
 	const randomElement = questions[Math.floor(Math.random() * questions.length)];
-	var prompted = prompt(randomElement.question)
-	if (prompted) {
+	askTheWonderfulQuestion(randomElement.question).then(function(prompted) {
+		if (prompted === '#42gfdf%gfdSidd_isrealgreatlol') {
+			return false;
+		} else if (prompted === '') {
+			return false;
+		}
 		var answer = randomElement.answer
 		var asnwersreq = randomElement.all_ansers_req
 		if (asnwersreq) {
@@ -622,10 +626,7 @@ function askQ(callback, loop) {
 			} else {
 				alert('Wrong anser, removed 10 points.')
 				removePoints(10)
-				if (loop === 'yes') {
-					alert('Summoning new question...')
-					askQ(callback, loop)
-				}
+
 				return 'incorrect';
 			}
 
@@ -642,16 +643,13 @@ function askQ(callback, loop) {
 			} else {
 				alert('Wrong anwser, removed 10 points.')
 				removePoints(10)
-				if (loop === 'yes') {
-					alert('Summoning new question...')
-					askQ(callback, loop)
-				}
+
 				return 'incorrect';
 
 
 			}
 		}
-	}
+	});
 }
 
 function nextLevel() {
@@ -711,6 +709,31 @@ function nextLevel() {
 };
 
 let points = 0
+
+
+
+const askTheWonderfulQuestion = function(input) {
+
+	return new Promise((resolve, reject) => {
+		if (document.querySelector('.vex')) {
+			resolve('#42gfdf%gfdSidd_isrealgreatlol')
+		} else {
+			vex.dialog.prompt({
+				showCloseButton: false,
+				escapeButtonCloses: false,
+				overlayClosesOnClick: false,
+				message: input,
+				placeholder: 'Hmmm 🤔',
+				callback: function(value) {
+					resolve(value);
+				}
+			})
+		}
+	});
+}
+
+
+
 
 function givePoints(amount) {
 	var pointselement = document.querySelector('.points')
